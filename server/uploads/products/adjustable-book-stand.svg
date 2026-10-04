@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" role="img" aria-labelledby="title desc">
+  <title id="title">Adjustable Book Stand</title><desc id="desc">Illustration of Adjustable Book Stand</desc>
+  <defs><filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="12" stdDeviation="13" flood-color="#172033" flood-opacity=".15"/></filter></defs>
+  <rect width="600" height="600" fill="#f4f2ed"/><circle cx="300" cy="276" r="207" fill="#fff" opacity=".64"/><ellipse cx="300" cy="476" rx="158" ry="18" fill="#172033" opacity=".1"/>
+  <g><path d="m205 160 190 56-62 210-190-56 62-210Z" fill="#c77b54"/><path d="m175 372 210 62 45-50-212-63-43 51Z" fill="#172033" opacity=".16"/><path d="M236 221 352 256m-128 5 111 34m-125 7 100 30" stroke="#fff" stroke-width="8" opacity=".56"/></g><text x="300" y="536" text-anchor="middle" fill="#334155" font-size="18" font-weight="600" font-family="Arial,sans-serif" textLength="500" lengthAdjust="spacingAndGlyphs">Adjustable Book Stand</text>
+</svg>

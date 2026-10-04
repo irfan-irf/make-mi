@@ -1,0 +1,90 @@
+@base = http://localhost:5000/api
+@token = paste_access_token_here
+@product = paste_product_id_here
+@order = paste_order_id_here
+
+### Register
+POST {{base}}/auth/register
+Content-Type: application/json
+
+{"name":"Sample Buyer","email":"buyer@example.com","password":"BuyerPass123"}
+
+### Login (including seeded admin)
+POST {{base}}/auth/login
+Content-Type: application/json
+
+{"email":"admin@example.com","password":"Admin@123"}
+
+### Current profile
+GET {{base}}/auth/me
+Authorization: Bearer {{token}}
+
+### Browse products
+GET {{base}}/products?category=fashion&color=navy&sort=rating&page=1&limit=10
+
+### Search suggestions
+GET {{base}}/products/suggestions?q=wireless
+
+### Product detail and reviews
+GET {{base}}/products/{{product}}
+###
+GET {{base}}/products/{{product}}/reviews
+
+### Add review (requires delivered purchase)
+POST {{base}}/products/{{product}}/reviews
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{"rating":5,"comment":"Excellent quality."}
+
+### Add to cart
+POST {{base}}/cart
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{"product":"{{product}}","quantity":1,"color":"Navy","size":"M"}
+
+### Cart and wishlist
+GET {{base}}/cart
+Authorization: Bearer {{token}}
+###
+POST {{base}}/wishlist
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{"product":"{{product}}"}
+
+### Save color profile
+POST {{base}}/users/color-profile
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{"skinDepth":"medium","undertone":"warm","palette":[{"name":"Teal","hex":"#008080"}]}
+
+### Create payment intent
+POST {{base}}/payment/create-intent
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{"amount":129.99,"currency":"usd"}
+
+### Place order (use a valid address/product and completed payment result)
+POST {{base}}/orders
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{"items":[{"product":"{{product}}","quantity":1}],"shippingAddress":{"fullName":"Sample Buyer","line1":"1 Main St","city":"Boston","state":"MA","postalCode":"02108","country":"US"},"paymentResult":{"id":"mock_payment_id","status":"succeeded"}}
+
+### My orders
+GET {{base}}/orders/my
+Authorization: Bearer {{token}}
+
+### Admin stats and order status
+GET {{base}}/admin/stats
+Authorization: Bearer {{token}}
+###
+PUT {{base}}/admin/orders/{{order}}/status
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{"status":"Packed"}

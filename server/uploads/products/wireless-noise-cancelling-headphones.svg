@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" role="img" aria-labelledby="title desc">
+  <title id="title">Wireless Noise-Cancelling Headphones</title><desc id="desc">Illustration of Wireless Noise-Cancelling Headphones</desc>
+  <defs><filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="12" stdDeviation="13" flood-color="#172033" flood-opacity=".15"/></filter></defs>
+  <rect width="600" height="600" fill="#f4f2ed"/><circle cx="300" cy="276" r="207" fill="#fff" opacity=".64"/><ellipse cx="300" cy="476" rx="158" ry="18" fill="#172033" opacity=".1"/>
+  <g><path d="M164 314v-54q0-141 136-141t136 141v54" fill="none" stroke="#6674d9" stroke-width="36" stroke-linecap="round"/><rect x="137" y="284" width="76" height="146" rx="30" fill="#6674d9"/><rect x="387" y="284" width="76" height="146" rx="30" fill="#6674d9"/><rect x="153" y="302" width="28" height="106" rx="14" fill="#fff" opacity=".28"/><rect x="403" y="302" width="28" height="106" rx="14" fill="#fff" opacity=".28"/></g><text x="300" y="536" text-anchor="middle" fill="#334155" font-size="18" font-weight="600" font-family="Arial,sans-serif" textLength="500" lengthAdjust="spacingAndGlyphs">Wireless Noise-Cancelling Headphones</text>
+</svg>

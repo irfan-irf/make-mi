@@ -1,0 +1,8 @@
+import { useState } from 'react';
+import { PaymentElement, useElements, useStripe } from '@stripe/react-stripe-js';
+
+export default function StripePaymentForm({clientSecret,onPaid,total}){
+  const stripe=useStripe();const elements=useElements();const [busy,setBusy]=useState(false);const [error,setError]=useState('');
+  const submit=async(event)=>{event.preventDefault();if(!stripe||!elements)return;setBusy(true);setError('');try{const validation=await elements.submit();if(validation.error)throw new Error(validation.error.message);const result=await stripe.confirmPayment({elements,clientSecret,confirmParams:{return_url:`${window.location.origin}/checkout`},redirect:'if_required'});if(result.error)throw new Error(result.error.message||'Payment could not be confirmed.');if(result.paymentIntent?.status==='succeeded'){await onPaid({id:result.paymentIntent.id,status:result.paymentIntent.status});return;}throw new Error(`Payment status: ${result.paymentIntent?.status||'pending'}. Please check the payment and try again.`);}catch(err){setError(err.message||'Payment could not be confirmed.')}finally{setBusy(false)}};
+  return <form onSubmit={submit} className="space-y-5"><PaymentElement options={{layout:'tabs'}}/>{error&&<p role="alert" className="rounded-lg bg-rose-50 p-3 text-sm text-rose-700">{error}</p>}<button disabled={!stripe||busy} className="w-full rounded-lg bg-amber px-5 py-3 font-bold text-navy hover:bg-amber-300 disabled:opacity-50">{busy?'Confirming payment…':`Pay ${total}`}</button><p className="text-center text-xs text-slate-500">Test payments are handled securely by Stripe.</p></form>;
+}

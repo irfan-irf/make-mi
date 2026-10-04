@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" role="img" aria-labelledby="title desc">
+  <title id="title">Portable SSD 1TB</title><desc id="desc">Illustration of Portable SSD 1TB</desc>
+  <defs><filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="12" stdDeviation="13" flood-color="#172033" flood-opacity=".15"/></filter></defs>
+  <rect width="600" height="600" fill="#f4f2ed"/><circle cx="300" cy="276" r="207" fill="#fff" opacity=".64"/><ellipse cx="300" cy="476" rx="158" ry="18" fill="#172033" opacity=".1"/>
+  <g><rect x="176" y="127" width="248" height="304" rx="32" fill="#6674d9"/><rect x="196" y="147" width="208" height="264" rx="22" fill="#172033" opacity=".12"/><circle cx="300" cy="278" r="69" fill="#fff" opacity=".82"/><path d="M266 278h68m-34-34v68" stroke="#6674d9" stroke-width="13" stroke-linecap="round"/><path d="M236 382h128" stroke="#fff" stroke-width="8" opacity=".7"/></g><text x="300" y="536" text-anchor="middle" fill="#334155" font-size="18" font-weight="600" font-family="Arial,sans-serif" textLength="500" lengthAdjust="spacingAndGlyphs">Portable SSD 1TB</text>
+</svg>

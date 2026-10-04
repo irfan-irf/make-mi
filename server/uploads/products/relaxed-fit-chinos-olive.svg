@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" role="img" aria-labelledby="title desc">
+  <title id="title">Relaxed Fit Chinos</title><desc id="desc">Illustration of Relaxed Fit Chinos</desc>
+  <defs><filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="12" stdDeviation="13" flood-color="#172033" flood-opacity=".15"/></filter></defs>
+  <rect width="600" height="600" fill="#f4f2ed"/><circle cx="300" cy="276" r="207" fill="#fff" opacity=".64"/><ellipse cx="300" cy="476" rx="158" ry="18" fill="#172033" opacity=".1"/>
+  <g><path d="M202 105h196l-18 130 35 229q-47 22-91-2l-23-174-23 174q-44 24-91 2l35-229-20-130Z" fill="#708238" stroke="#172033" stroke-opacity=".24" stroke-width="8" stroke-linejoin="round"/><path d="M202 105h196l-7 54H210Z" fill="#111827" opacity=".14"/><path d="M301 159v128" stroke="#111827" stroke-opacity=".24" stroke-width="7"/><path d="M220 179h43m74 0h43" stroke="#fff" stroke-opacity=".22" stroke-width="8" stroke-linecap="round"/></g><text x="300" y="536" text-anchor="middle" fill="#475569" font-size="20" font-weight="600" font-family="Arial,sans-serif">Relaxed Fit Chinos</text>
+</svg>

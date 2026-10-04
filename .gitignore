@@ -1,0 +1,13 @@
+node_modules/
+client/node_modules/
+server/node_modules/
+.env
+.env.*
+!.env.example
+!client/.env.example
+!server/.env.example
+dist/
+client/dist/
+server/dist/
+!server/uploads/products/
+!server/uploads/products/**

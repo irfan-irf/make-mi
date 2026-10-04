@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" role="img" aria-labelledby="title desc">
+  <title id="title">Pleated Midi Skirt</title><desc id="desc">Illustration of Pleated Midi Skirt</desc>
+  <defs><filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="12" stdDeviation="13" flood-color="#172033" flood-opacity=".15"/></filter></defs>
+  <rect width="600" height="600" fill="#f4f2ed"/><circle cx="300" cy="276" r="207" fill="#fff" opacity=".64"/><ellipse cx="300" cy="476" rx="158" ry="18" fill="#172033" opacity=".1"/>
+  <g><path d="M215 112h170l14 82 74 247q-173 45-346 0l74-247 14-82Z" fill="#D4A017" stroke="#172033" stroke-opacity=".22" stroke-width="8" stroke-linejoin="round"/><path d="M215 112h170l8 57H207Z" fill="#111827" opacity=".14"/><path d="m267 180-31 248m97-248 31 248" stroke="#fff" stroke-opacity=".19" stroke-width="8"/></g><text x="300" y="536" text-anchor="middle" fill="#475569" font-size="20" font-weight="600" font-family="Arial,sans-serif">Pleated Midi Skirt</text>
+</svg>

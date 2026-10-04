@@ -1,0 +1,21 @@
+﻿import { useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { FiEye, FiEyeOff, FiLock, FiMail } from 'react-icons/fi';
+import toast from 'react-hot-toast';
+import { useAuth } from '../context/AuthContext.jsx';
+import { getErrorMessage } from '../services/api.js';
+
+export default function LoginPage() {
+  const { login } = useAuth(); const navigate = useNavigate(); const location = useLocation();
+  const [form, setForm] = useState({ email: '', password: '' }); const [showPassword, setShowPassword] = useState(false); const [busy, setBusy] = useState(false); const [error, setError] = useState('');
+  const submit = async (event) => { event.preventDefault(); setBusy(true); setError(''); try { const user = await login(form); toast.success(`Welcome${user.name ? ` back, ${user.name.split(' ')[0]}` : ''}!`); navigate(location.state?.from?.pathname || '/', { replace: true }); } catch (err) { const message = getErrorMessage(err, 'We could not sign you in. Please try again.'); setError(message); toast.error(message); } finally { setBusy(false); } };
+  return <section className="page-enter mx-auto grid min-h-[75vh] w-full max-w-5xl items-center gap-10 px-4 py-10 md:grid-cols-[1fr_430px] lg:px-6"><div className="hidden rounded-3xl bg-gradient-to-br from-navy to-slate-700 p-10 text-white md:block"><p className="text-sm font-bold uppercase tracking-[.22em] text-amber">Welcome to Make MI</p><h1 className="mt-5 text-4xl font-black leading-tight">A little something for every day.</h1><p className="mt-4 max-w-sm leading-7 text-slate-300">Sign in to keep your cart close, save the things you love, and track every order.</p><div className="mt-10 flex gap-2"><span className="h-1.5 w-12 rounded-full bg-amber"/><span className="h-1.5 w-5 rounded-full bg-white/30"/><span className="h-1.5 w-5 rounded-full bg-white/30"/></div></div>
+    <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-soft sm:p-9"><div className="mb-7"><p className="text-sm font-bold text-amber-700">YOUR ACCOUNT</p><h2 className="mt-2 text-3xl font-black text-slate-900">Sign in</h2><p className="mt-2 text-sm text-slate-500">Welcome back. Enter your details below.</p></div>
+      <form className="space-y-5" onSubmit={submit}>
+        <label className="block"><span className="mb-1.5 block text-sm font-semibold text-slate-700">Email address</span><span className="relative block"><FiMail className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"/><input required type="email" autoComplete="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="w-full rounded-lg border border-slate-300 py-3 pl-10 pr-3 text-sm outline-none transition focus:border-amber-500 focus:ring-2 focus:ring-amber-100" placeholder="you@example.com" /></span></label>
+        <label className="block"><span className="mb-1.5 block text-sm font-semibold text-slate-700">Password</span><span className="relative block"><FiLock className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"/><input required minLength="8" type={showPassword ? 'text' : 'password'} autoComplete="current-password" value={form.password} onChange={(e) => setForm({ ...form, password: e.target.value })} className="w-full rounded-lg border border-slate-300 py-3 pl-10 pr-11 text-sm outline-none transition focus:border-amber-500 focus:ring-2 focus:ring-amber-100" placeholder="Your password"/><button type="button" className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700" aria-label={showPassword ? 'Hide password' : 'Show password'} onClick={() => setShowPassword(!showPassword)}>{showPassword ? <FiEyeOff /> : <FiEye />}</button></span></label>
+        {error && <p role="alert" className="rounded-lg bg-rose-50 px-3 py-2 text-sm text-rose-700">{error}</p>}
+        <button disabled={busy} className="w-full rounded-lg bg-amber px-4 py-3 font-bold text-navy shadow-sm transition hover:bg-amber-300 disabled:cursor-wait disabled:opacity-60">{busy ? 'Signing in…' : 'Sign in'}</button>
+      </form><p className="mt-6 border-t border-slate-100 pt-5 text-center text-sm text-slate-600">New to Make MI? <Link className="font-bold text-sky-700 hover:underline" to="/register">Create an account</Link></p>
+    </div></section>;
+}

@@ -1,0 +1,2 @@
+export function notFound(req,res,next){res.status(404).json({success:false,message:`Route not found: ${req.method} ${req.originalUrl}`});}
+export function errorHandler(err,req,res,next){const status=err.status|| (err.name==='ValidationError'||err.name==='CastError'?400:err.code===11000?409:500);res.status(status).json({success:false,message:err.code===11000?'A record with that value already exists':err.message||'Server error',...(process.env.NODE_ENV==='development'?{stack:err.stack}:{})});}
